@@ -12,7 +12,7 @@ public class Circle extends Shapes {
     @Override
     public double getArea() {
         if (radius < 0) {
-            throw new IllegalArgumentException("Promien mniejszy od 0");
+            throw new IllegalArgumentException("Promien mniejszy od 0"); // dziedziczy po RunTimeException - wyj. unchecked, wiec bez throws
         } else {
             return (Math.PI * radius * radius);
         }

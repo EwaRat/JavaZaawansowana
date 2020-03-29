@@ -29,7 +29,7 @@ public class Account {
 
         }
         if (cash < 0) {
-            throw new NegativeWithdrawException("Próba wypłaty mniej niz 0"); //dopisanie wyjatku - dziedziczy po RunTime, dlatego nie trzeba throws
+            throw new NegativeWithdrawException("Próba wypłaty mniej niz 0"); //dopisanie wyjatku - wyjatek kontrolowany, wiec trzeba throws w naglowku
             //System.out.println("Nie mozesz wyplacic kwoty wiekszej niz masz na koncie");
             //return 0;
         }

@@ -8,14 +8,14 @@ public class SafeNotepad {
 
     // kod skopiowany ze slacka character stream
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { // throws bo wyj. kontrolowany!!
 
         FileReader inputStream = null; //czytanie
         FileWriter outputStream = null; //pisanie
 
         try {
             inputStream = new FileReader("test.txt"); //otworz plik
-            outputStream = new FileWriter("out.txt");
+            outputStream = new FileWriter("out.txt"); //plik wyjsciowy
 
            // System.out.println(new File(".").getCanonicalFile());
 
@@ -38,7 +38,7 @@ public class SafeNotepad {
             }
 
         } catch (IOException e) {
-            System.err.println("Problem z plikiem" + e.getMessage());
+            System.err.println("Problem z plikiem" + e.getMessage()); // System.err jak sout ale typowo dla drukowania bledow
             // e.printStackTrace();  //drukuje stos wywolanych funkcji
         } finally {
             if (inputStream != null) {
