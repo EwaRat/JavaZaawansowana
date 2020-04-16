@@ -5,8 +5,5 @@ public class CreditAccount extends Account {
         super(number, balance, client);
     }
 
-    @Override
-    public int withdraw(int cash) {
-        return super.withdraw(cash);
-    }
+
 }

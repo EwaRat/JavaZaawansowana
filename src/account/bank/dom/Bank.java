@@ -1,5 +1,7 @@
 package account.bank.dom;
 
+import bank.account.NegativeWithdrawException;
+
 public class Bank {
     public static void main(String[] args) {
 
@@ -13,5 +15,27 @@ public class Bank {
         System.out.println(c2);
         System.out.println(a1);
         System.out.println(a2);
-    }
+
+        try
+        {
+            a1.withdraw(600);
+        } catch (NegativeWithdrawException e) {
+            System.out.println("Bład" + e.getMessage());
+        }
+        finally {
+            System.out.println("Koniec");
+        }
+
+        try {
+            a1.deposit(-5);
+        } catch (NegativeWithdrawException e) {
+            System.out.println("Bład krytyczny " + e.getMessage());
+        }
+        finally {
+            System.out.println("Koniec 2");
+        }
+
+
+
+}
 }

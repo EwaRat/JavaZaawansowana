@@ -1,7 +1,7 @@
 package shapes.molding;
 
 import java.util.Random;
-public class Calculator extends IllegalArgumentException {
+public class Calculator  {
     public static void main(String[] args) {
         // utworzenie tablicy 20 kształtow;
         // losuje 0-4, gdy wypadnie 0: trojkat, 1: prostokat, 2:kwadrat, 3:kolo - podaje ich pola

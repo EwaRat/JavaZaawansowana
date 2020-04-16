@@ -1,5 +1,7 @@
 package account.bank.dom;
 
+import bank.account.NegativeWithdrawException;
+
 public class Account {
 
     private String number;
@@ -12,14 +14,25 @@ public class Account {
         this.client = client;
     }
 
-    public void deposit (int cash) {
-        balance += cash;
+    public void deposit (int cash) throws NegativeWithdrawException {
+        if (cash>0) {
+            balance += cash;
+
+        }else {
+            throw new NegativeWithdrawException("NIe mozna wykonac operacji");
+        }
     }
 
-    public int withdraw ( int cash) {
-        balance -= cash;
+    public int withdraw ( int cash) throws NegativeWithdrawException {
 
-        return cash;
+        if (cash>0) {
+            balance -= cash;
+
+            return cash;
+
+        } else{
+            throw new NegativeWithdrawException("NIe można wypłacić mniej niz 0!!");
+        }
     }
 
 
